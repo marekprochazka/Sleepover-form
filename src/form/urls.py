@@ -1,7 +1,9 @@
 from django.urls import path, include
-from django.views.generic import TemplateView
 
+from form.views import SleepOverFormView
+
+app_name = 'form'
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name='form/form.html'))
+    path('', SleepOverFormView.as_view(), name='sleepover_form')
 ]
