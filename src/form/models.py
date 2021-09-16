@@ -13,6 +13,10 @@ class Request(models.Model):
     x_modified = ModificationDateTimeField("x_modified")
 
     requester_name = models.CharField(max_length=64, verbose_name='Requester name')
-    sleepover_date = models.DateField(verbose_name='Sleepover date')
+    sleepover_date_from = models.DateField(verbose_name='Sleepover date from')
+    sleepover_date_to = models.DateField(verbose_name='Sleepover date to')
     num_persons = models.IntegerField(verbose_name='Number of persons')
     accepted = models.BooleanField(default=False, verbose_name='Accepted')
+
+    coitus = models.BooleanField(verbose_name='Is coitus')
+    estimated_coitus_time = models.BooleanField(null=True, blank=True)
